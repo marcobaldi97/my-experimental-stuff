@@ -1,0 +1,43 @@
+.container {
+    display: list-item;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: fit-content;
+    padding: 5px;
+
+    border: 1px solid var(--borderColor);
+    border-radius: 5px;
+    
+    list-style: cjk-heavenly-stem;
+
+    .content {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+
+        justify-content: space-between;
+        align-items: baseline;
+
+        button {
+            height: 35px;
+            width: 35px;
+
+            border: 1px solid var(--borderColor);
+            border-radius: 50%;
+
+            background-color: transparent;
+
+            &:hover {
+                background-color: var(--borderColor);
+            }
+
+            &:active {
+                background-color: var(--borderColorLighter);
+            }
+        }
+    }
+}
+
