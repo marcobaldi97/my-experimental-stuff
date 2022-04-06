@@ -1,0 +1,48 @@
+.container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 30px auto 30px;
+    align-items: center;
+    justify-items: center;
+
+    width: 100%;
+    min-height: 100px;
+
+    padding: 5px;
+
+    .cbutton {
+        width: fit-content;
+        height: fit-content;
+
+        border: 1px solid var(--borderColor);
+        background-color: transparent;
+        border-radius: 50%;
+    }
+
+    .launches {
+        text-align: center;
+    }
+
+    .loader {
+        border: 10px solid #f3f3f3;
+        /* Light grey */
+        border-top: 10px solid #3498db;
+        /* Blue */
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        animation: spin 2s linear infinite;
+    }
+    
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+    
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+
+}

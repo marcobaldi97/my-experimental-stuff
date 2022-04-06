@@ -1,0 +1,19 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  padding: 12px;
+
+  &__todoContainer {
+    width: 390px;
+    min-height: 100%;
+  }
+}
+
+body, html {
+  height: 100vh;
+  width: 100%;
+}
+
+

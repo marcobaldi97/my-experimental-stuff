@@ -1,11 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react";
-import TodoItem from "../todoitem/todoitem";
+import Carousel from "./components/carousel/carousel";
+import TodoItem from "./components/todoitem/todoitem";
 
 import styles from "./todopanel.module.scss";
 
 export default function TodoPanel() {
 	const [todos, setTodos] = useState<string[]>([
-		"Learn Next.js",
+		"Learn ReactJS",
 		"Going to Party",
 	]);
 	const [value, setValue] = useState("");
@@ -45,19 +46,25 @@ export default function TodoPanel() {
 
 	return (
 		<div className={styles.container}>
-			<h2>😎 My T0D0 🖋</h2>
-			<div className={styles.newTodo}>
-				<input
-					name="newTodo"
-					type="text"
-					value={value}
-					onChange={(event) => setValue(event.target.value)}
-				/>
-				{!showTimeSetting && <button onClick={onAddClick}>➕</button>}
-				<button onClick={() => setShowTimeSetting(!showTimeSetting)}>
-					{showTimeSetting ? "➖" : "⏰"}
-				</button>
+			<div>
+				<h2>😎 My T0D0 🖋</h2>
+				<div className={styles.newTodo}>
+					<input
+						name="newTodo"
+						type="text"
+						value={value}
+						onChange={(event) => setValue(event.target.value)}
+					/>
+					{!showTimeSetting && (
+						<button onClick={onAddClick}>➕</button>
+					)}
+					<button
+						onClick={() => setShowTimeSetting(!showTimeSetting)}>
+						{showTimeSetting ? "➖" : "⏰"}
+					</button>
+				</div>
 			</div>
+
 			{showTimeSetting && (
 				<div className={styles.newTodo}>
 					<input
@@ -81,6 +88,7 @@ export default function TodoPanel() {
 					/>
 				))}
 			</ul>
+			<Carousel />
 		</div>
 	);
 }
