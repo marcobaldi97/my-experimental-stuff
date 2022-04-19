@@ -2,10 +2,11 @@ import React from "react";
 import TodoPanel from "./pages/todo/todopanel";
 
 import styles from "./App.module.scss";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import ReduxTest from "./pages/reduxtests/reduxtest";
 import { Provider } from "react-redux";
 import { store } from "./pages/reduxtests/reduxStuff";
+import GraphTest from "./pages/graph/GraphTest";
 
 function App() {
 	return (
@@ -13,8 +14,13 @@ function App() {
 			<div className={styles.App}>
 				<BrowserRouter>
 					<Routes>
-						<Route path="/test" element={<ReduxTest />} />
-						<Route path="/" element={<TodoPanel />} />
+						<Route path="/todo" element={<TodoPanel />} />
+						<Route path="/testRedux" element={<ReduxTest />} />
+						<Route path="/jsonToGraph" element={<GraphTest />} />
+						<Route
+							path="*"
+							element={<Navigate to="/jsonToGraph" />}
+						/>
 					</Routes>
 				</BrowserRouter>
 			</div>

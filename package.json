@@ -1,6 +1,6 @@
 {
   "name": "my-todo-experimental-app",
-  "homepage": "http://marcobaldi97.github.io/my-todo-experimental-app",
+  "homepage": "http://marcobaldi97.github.io/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,6 +14,9 @@
     "node-sass": "7.0.1",
     "react": "18.0.0",
     "react-dom": "18.0.0",
+    "react-drag-drop-files": "^2.3.5",
+    "react-dropzone-uploader": "^2.11.0",
+    "react-force-graph": "^1.41.12",
     "react-redux": "7.2.8",
     "react-router-dom": "6.3.0",
     "react-scripts": "5.0.0",
@@ -25,7 +28,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
@@ -48,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-json-editor-ajrm": "^2.5.3",
     "gh-pages": "3.2.3"
   }
 }
