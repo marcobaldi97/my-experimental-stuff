@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/my-todo-experimental-app/static/css/main.45077c35.css",
-    "main.js": "/my-todo-experimental-app/static/js/main.b2e5c9f7.js",
-    "static/js/787.f2eaf134.chunk.js": "/my-todo-experimental-app/static/js/787.f2eaf134.chunk.js",
-    "index.html": "/my-todo-experimental-app/index.html",
-    "main.45077c35.css.map": "/my-todo-experimental-app/static/css/main.45077c35.css.map",
-    "main.b2e5c9f7.js.map": "/my-todo-experimental-app/static/js/main.b2e5c9f7.js.map",
-    "787.f2eaf134.chunk.js.map": "/my-todo-experimental-app/static/js/787.f2eaf134.chunk.js.map"
+    "main.css": "/my-experimental-stuff/static/css/main.9cb35651.css",
+    "main.js": "/my-experimental-stuff/static/js/main.ede64d69.js",
+    "static/js/787.4031072c.chunk.js": "/my-experimental-stuff/static/js/787.4031072c.chunk.js",
+    "index.html": "/my-experimental-stuff/index.html",
+    "main.9cb35651.css.map": "/my-experimental-stuff/static/css/main.9cb35651.css.map",
+    "main.ede64d69.js.map": "/my-experimental-stuff/static/js/main.ede64d69.js.map",
+    "787.4031072c.chunk.js.map": "/my-experimental-stuff/static/js/787.4031072c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.45077c35.css",
-    "static/js/main.b2e5c9f7.js"
+    "static/css/main.9cb35651.css",
+    "static/js/main.ede64d69.js"
   ]
 }
