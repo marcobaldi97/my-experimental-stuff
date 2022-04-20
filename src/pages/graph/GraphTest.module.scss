@@ -5,6 +5,9 @@
     justify-items: center;
     background-color: #000011;
 
+    max-width: 100%;
+    width: fit-content;
+    
     padding: 12px;
 
     .header {
@@ -30,7 +33,7 @@
 
         .loadedFileData {
             display: grid;
-            grid-template-columns: 2fr 3fr;
+            grid-template-columns: 30% 70%;
             gap: 5px;
             align-items: center;
             justify-items: center;
@@ -39,6 +42,13 @@
             width: 100%;
 
             padding: 12px;
+
+            .currentValue {
+                display: flex;
+                flex-wrap: wrap;
+
+                max-width: 100% !important;
+            }
         }
     }
 

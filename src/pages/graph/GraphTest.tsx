@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { FileUploader } from "react-drag-drop-files";
 import { ForceGraph3D } from "react-force-graph";
+//@ts-ignore
+import { JsonEditor as Editor } from "jsoneditor-react";
+
+import "jsoneditor-react/es/editor.min.css";
 
 import styles from "./GraphTest.module.scss";
 
@@ -91,6 +95,8 @@ const GraphTest: React.FC = () => {
 	const [graph, setGraph] = useState<Graph>(convertToNodes(example));
 	const [loadedFileName, setLoadedFileName] = useState("example");
 	const [selectedElement, setSelectedElement] = useState("");
+	const [loadedJson, setLoadedJson] =
+		useState<Record<string, unknown>>(example);
 	const [value, setValue] = useState("");
 
 	useEffect(() => {
@@ -102,6 +108,8 @@ const GraphTest: React.FC = () => {
 		}
 
 		if (selectedElement) {
+			if (selectedElement === "root") setValue(JSON.stringify(graph));
+
 			getValueById(selectedElement);
 			setValue(getValueById(selectedElement) ?? "");
 		}
@@ -112,9 +120,15 @@ const GraphTest: React.FC = () => {
 
 		file.text().then((text) => {
 			const json = JSON.parse(text);
+			setLoadedJson(json);
 			setGraph(convertToNodes(json));
 			setLoadedFileName(file.name);
 		});
+	}
+
+	function onEdit(newJson: Record<string, unknown>) {
+		setLoadedJson(newJson);
+		setGraph(convertToNodes(newJson));
 	}
 
 	return (
@@ -127,6 +141,8 @@ const GraphTest: React.FC = () => {
 					handleChange={handleChange}
 				/>
 
+				<Editor value={loadedJson} onChange={onEdit} />
+
 				<section className={styles.loadedFileData}>
 					<h3>
 						Loaded file: <i>{loadedFileName}</i>
@@ -134,7 +150,7 @@ const GraphTest: React.FC = () => {
 
 					<div style={{ justifySelf: "flex-start" }}>
 						<h4>Element: {selectedElement}</h4>
-						<h4>Value: {value}</h4>
+						<h4 className={styles.currentValue}>Value: {value}</h4>
 					</div>
 				</section>
 			</div>
